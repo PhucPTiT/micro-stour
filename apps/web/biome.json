@@ -1,0 +1,10 @@
+{
+  "extends": "//",
+  "root": false,
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 4,
+    "lineEnding": "lf"
+  }
+}
