@@ -1,16 +1,20 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 
 import "@workspace/ui/globals.css";
-import App from "./App.tsx";
-import Provider from "./provider.tsx";
+import App from "./App";
+import Layout from "./layouts";
+import Provider from "./provider";
 
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
-        <div className="bg-background min-h-svh p-6">
-            <Provider>
-                <App />
-            </Provider>
-        </div>
+        <Provider>
+            <BrowserRouter>
+                <Layout>
+                    <App />
+                </Layout>
+            </BrowserRouter>
+        </Provider>
     </StrictMode>,
 );
