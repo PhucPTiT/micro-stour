@@ -4,7 +4,10 @@
   "private": true,
   "scripts": {
     "build": "turbo build",
-    "dev": "turbo dev",
+    "dev": "pnpm run dev:integration",
+    "dev:shell": "pnpm --filter shell-base dev",
+    "dev:module": "pnpm --filter module dev",
+    "dev:integration": "concurrently -k -n shell,module \"pnpm --filter shell-base dev\" \"pnpm --filter module dev:federation\"",
     "lint": "biome check .",
     "format": "biome format .",
     "typecheck": "turbo typecheck"
