@@ -14,7 +14,7 @@ export default defineConfig({
             exposes: {
                 "./App": "./src/App.tsx",
             },
-            shared: ["react", "react-dom", "react-router-dom"],
+            shared: ["react", "react-dom", "react-router-dom", "@tanstack/react-query"],
         }),
     ],
     server: {
