@@ -1,6 +1,12 @@
 import type React from "react";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+    const isLoginPage = window.location.pathname.includes("login");
+
+    if (isLoginPage) {
+        return <>{children}</>;
+    }
+
     return (
         <div className="bg-background min-h-svh">
             <div className="flex min-h-svh">
