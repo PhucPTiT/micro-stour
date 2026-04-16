@@ -1,0 +1,40 @@
+{
+    "name": "auth-service",
+    "version": "0.0.1",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "dev": "vite",
+        "dev:federation": "pnpm run build && concurrently -k -n build,preview \"pnpm run build:watch\" \"pnpm run preview\"",
+        "build": "tsc -b && vite build",
+        "build:watch": "vite build --watch",
+        "format": "biome format --write .",
+        "lint": "biome lint .",
+        "typecheck": "tsc --noEmit",
+        "preview": "vite preview --host 0.0.0.0 --port 3000 --strictPort"
+    },
+    "dependencies": {
+        "@tanstack/react-query": "^5.99.0",
+        "@tanstack/react-query-devtools": "^5.99.0",
+        "@workspace/ui": "workspace:*",
+        "axios": "^1.15.0",
+        "lucide-react": "^1.8.0",
+        "react": "^19.2.4",
+        "react-dom": "^19.2.4",
+        "react-hook-form": "^7.72.1",
+        "react-router-dom": "^7.9.4",
+        "zod": "^3.25.76",
+        "zustand": "^5.0.12"
+    },
+    "devDependencies": {
+        "@originjs/vite-plugin-federation": "^1.4.1",
+        "@tailwindcss/vite": "^4.1.18",
+        "@types/node": "^25.1.0",
+        "@types/react": "^19.2.10",
+        "@types/react-dom": "^19.2.3",
+        "@vitejs/plugin-react": "^5.1.1",
+        "globals": "^17.2.0",
+        "typescript": "^5.9.3",
+        "vite": "^7.3.2"
+    }
+}

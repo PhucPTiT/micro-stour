@@ -10,7 +10,9 @@ import NotFoundPage from "@/pages/not-found";
 function ModuleRoute() {
     return (
         <ErrorBoundary fallback={<ErrorState message="The remote module crashed while rendering." />}>
-            <Suspense fallback={<div className="bg-card rounded-3xl border p-6 text-sm">Loading module micro app...</div>}>
+            <Suspense
+                fallback={<div className="bg-card rounded-3xl border p-6 text-sm">Loading module micro app...</div>}
+            >
                 <ModuleApp />
             </Suspense>
         </ErrorBoundary>
@@ -30,11 +32,11 @@ const router = createBrowserRouter([
                 path: "/module/*",
                 element: <ModuleRoute />,
             },
-            {
-                path: "*",
-                element: <NotFoundPage />,
-            },
         ],
+    },
+    {
+        path: "*",
+        element: <NotFoundPage />,
     },
 ]);
 

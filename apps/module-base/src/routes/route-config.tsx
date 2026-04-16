@@ -10,38 +10,37 @@ export const moduleRoutes: RouteObject[] = [
     {
         errorElement: <ErrorPage />,
         children: [
+            // Guest routes
             {
-                index: true,
-                element: (
-                    <ProtectedRoute>
-                        <HomePage />
-                    </ProtectedRoute>
-                ),
+                element: <GuestOnlyRoute />,
+                children: [
+                    {
+                        path: "login",
+                        element: <LoginPage />,
+                    },
+                ],
             },
+
+            // Protected routes
             {
-                path: "login",
-                element: (
-                    <GuestOnlyRoute>
-                        <LoginPage />
-                    </GuestOnlyRoute>
-                ),
+                element: <ProtectedRoute />,
+                children: [
+                    {
+                        index: true,
+                        element: <HomePage />,
+                    },
+                    {
+                        path: "test",
+                        element: <div>Test Page</div>,
+                    },
+                    {
+                        path: "test/:id",
+                        element: <div>Test ID Page</div>,
+                    },
+                ],
             },
-            {
-                path: "test",
-                element: (
-                    <ProtectedRoute>
-                        <div>Test Page</div>
-                    </ProtectedRoute>
-                ),
-            },
-            {
-                path: "test/:id",
-                element: (
-                    <ProtectedRoute>
-                        <div>Test ID Page</div>
-                    </ProtectedRoute>
-                ),
-            },
+
+            // Not found
             {
                 path: "*",
                 element: <NotFoundPage />,
