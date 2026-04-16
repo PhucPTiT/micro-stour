@@ -77,7 +77,7 @@ export function RegisterForm({
         <Field>
           <FieldDescription className="text-center">
             Already have an account?{" "}
-            <Link to="/login" className="underline underline-offset-4">
+            <Link to="../login" className="underline underline-offset-4">
               Login
             </Link>
           </FieldDescription>

@@ -26,7 +26,7 @@ const router = createBrowserRouter([
         element: <GuestOnlyRoute />,
         children: [
             {
-                path: "/*",
+                path: "/auth/test/*",
                 element: <AuthRoute />,
             },
         ],
