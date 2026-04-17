@@ -1,4 +1,11 @@
 {
     "extends": "//",
-    "root": false
+    "root": false,
+    "files": {
+        "includes": [
+            "src/**/*.{js,jsx,ts,tsx,json,css,scss,md,mdx}",
+            "!src/components/ui/**/*.{js,jsx,ts,tsx,json,css,scss,md,mdx}"
+        ],
+        "ignoreUnknown": true
+    }
 }

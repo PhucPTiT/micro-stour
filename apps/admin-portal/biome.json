@@ -1,10 +1,17 @@
 {
-  "extends": "//",
-  "root": false,
-  "formatter": {
-    "enabled": true,
-    "indentStyle": "space",
-    "indentWidth": 4,
-    "lineEnding": "lf"
-  }
+    "extends": "//",
+    "root": false,
+    "formatter": {
+        "enabled": true,
+        "indentStyle": "space",
+        "indentWidth": 4,
+        "lineEnding": "lf"
+    },
+    "files": {
+        "includes": [
+            "src/**/*.{js,jsx,ts,tsx,json,css,scss,md,mdx}",
+            "!src/components/ui/**/*.{js,jsx,ts,tsx,json,css,scss,md,mdx}"
+        ],
+        "ignoreUnknown": true
+    }
 }

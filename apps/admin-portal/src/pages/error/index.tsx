@@ -19,7 +19,9 @@ function getErrorMessage(error: unknown) {
 export function ErrorState({ message }: ErrorStateProps) {
     return (
         <div className="bg-card flex min-h-[360px] flex-col items-center justify-center gap-4 rounded-3xl border px-6 py-12 text-center">
-            <span className="text-destructive text-sm font-semibold uppercase tracking-[0.24em]">Application error</span>
+            <span className="text-destructive text-sm font-semibold uppercase tracking-[0.24em]">
+                Application error
+            </span>
             <h1 className="text-3xl font-semibold tracking-tight">Something went wrong</h1>
             <p className="text-muted-foreground max-w-xl text-sm leading-6">{message}</p>
         </div>

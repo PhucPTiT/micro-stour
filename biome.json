@@ -1,43 +1,55 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
-  "root": true,
-  "vcs": {
-    "enabled": true,
-    "clientKind": "git",
-    "useIgnoreFile": true
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "a11y": {
-        "useFocusableInteractive": "error",
-        "noSvgWithoutTitle": "off",
-        "useValidAnchor": "off"
-      },
-      "recommended": true,
-      "suspicious": {
-        "noExplicitAny": "error",
-        "noUnknownAtRules": "off",
-        "useBiomeIgnoreFolder": "error",
-        "noArrayIndexKey": "warn"
-      }
+    "$schema": "https://biomejs.dev/schemas/2.4.11/schema.json",
+    "root": true,
+    "vcs": {
+        "enabled": true,
+        "clientKind": "git",
+        "useIgnoreFile": true
     },
-    "domains": {
-      "react": "recommended"
+    "linter": {
+        "enabled": true,
+        "rules": {
+            "a11y": {
+                "useFocusableInteractive": "error",
+                "noSvgWithoutTitle": "off",
+                "useValidAnchor": "off"
+            },
+            "recommended": true,
+            "suspicious": {
+                "noExplicitAny": "error",
+                "noUnknownAtRules": "off",
+                "useBiomeIgnoreFolder": "error",
+                "noArrayIndexKey": "warn"
+            }
+        },
+        "domains": {
+            "react": "recommended"
+        }
+    },
+    "formatter": {
+        "enabled": true,
+        "lineWidth": 120,
+        "indentStyle": "space",
+        "indentWidth": 4,
+        "lineEnding": "lf"
+    },
+    "assist": {
+        "actions": {
+            "source": {
+                "organizeImports": "on"
+            }
+        }
+    },
+    "files": {
+        "includes": [
+            "apps/**/*.{js,jsx,ts,tsx}",
+            "packages/**/*.{js,jsx,ts,tsx}",
+            "!packages/ui",
+            "!**/node_modules",
+            "!**/.next",
+            "!**/dist",
+            "!**/.turbo"
+        ],
+        "ignoreUnknown": true
     }
-  },
-  "formatter": {
-    "enabled": true,
-    "lineWidth": 120,
-    "indentStyle": "space",
-    "indentWidth": 4,
-    "lineEnding": "lf"
-  },
-  "assist": {
-    "actions": {
-      "source": {
-        "organizeImports": "on"
-      }
-    }
-  }
 }

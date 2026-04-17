@@ -3,15 +3,16 @@
     "version": "0.0.1",
     "private": true,
     "scripts": {
-        "build": "turbo build --filter=!shell-base --filter=!module-base",
         "create:app": "node ./scripts/create-app.mjs",
         "dev": "node ./scripts/run-workspace-apps.mjs",
         "dev:shell-template": "pnpm --filter shell-base dev",
         "dev:module-template": "pnpm --filter module-base dev",
         "dev:integration-template": "concurrently -k -n shell,module \"pnpm --filter shell-base dev\" \"pnpm --filter module-base dev:federation\"",
-        "lint": "biome check . --diagnostic-level=error",
+        "lint": "biome check . --write",
+        "lint:check": "biome check . --diagnostic-level=error",
         "format": "biome format .",
-        "typecheck": "turbo typecheck --filter=!shell-base --filter=!module-base"
+        "typecheck": "turbo typecheck --filter=!shell-base --filter=!module-base",
+        "build": "pnpm lint && pnpm typecheck && turbo build --filter=!shell-base --filter=!module-base"
     },
     "devDependencies": {
         "@biomejs/biome": "2.4.11",

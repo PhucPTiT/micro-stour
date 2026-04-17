@@ -1,14 +1,6 @@
 "use client";
 
-import {
-    Sidebar,
-    SidebarContent,
-    SidebarFooter,
-    SidebarHeader,
-    SidebarRail,
-    useSidebar,
-} from "@workspace/ui/components/sidebar";
-import { cn } from "@workspace/ui/lib/utils";
+import { Sidebar, SidebarContent, SidebarFooter, SidebarRail } from "@workspace/ui/components/sidebar";
 import { TerminalSquareIcon } from "lucide-react";
 import type * as React from "react";
 import { NavMain } from "@/components/nav-main";
